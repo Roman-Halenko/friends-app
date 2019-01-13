@@ -12,7 +12,7 @@ fetch('https://randomuser.me/api/?results=60&nat=us')
 
 function controller(srcArr) {
 
-  let list = [];
+  let list = srcArr;
   let inputStr = "";
 
   function searchByName(e) {
@@ -25,6 +25,7 @@ function controller(srcArr) {
     renderHTML(list);
   }
   searchField.addEventListener('keyup', searchByName);
+  renderHTML(list);
 };
 
 function renderHTML(arrOfObj) {
