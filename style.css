@@ -125,8 +125,8 @@ form {
 
 .sort-label {
   background-color: white;
-  border-top-left-radius: 5px;
-  border-bottom-left-radius: 5px;
+  border-top-left-radius: 30px;
+  border-bottom-left-radius: 30px;
   position: relative;
   z-index: 3;
   left: 9px;
@@ -148,6 +148,8 @@ form {
   background-color: #212121;
   color: white;
   padding-left: 14px;
+  border-top-right-radius: 30px;
+  border-bottom-right-radius: 30px;
 }
 
 #input-sort:focus {
