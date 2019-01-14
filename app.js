@@ -8,6 +8,10 @@ const searchField = document.getElementById('search');
 
 const select = document.getElementById('input-sort');
 
+const filterBtns = document.querySelectorAll('.btn_filter');
+
+const filtersContainer = document.querySelector('.wrapper.filter_collection');
+
 fetch('https://randomuser.me/api/?results=60&nat=us')
 .then(response => response.json())
 .then(response => controller(response.results))
@@ -21,6 +25,23 @@ function controller(srcArr) {
     inputStr = searchField.value.toLowerCase();
     list = srcArr.filter(e => e.name.last.includes(inputStr) || e.name.first.includes(inputStr));
     renderHTML(list);
+  }
+
+  function filterByGender(ev) {
+    makeActive(ev.target, filterBtns);
+    if (ev.target.value === 'male') {
+      list = srcArr.filter(e => e.gender === 'male');
+    } else if (ev.target.value === 'female') {
+      list = srcArr.filter(e => e.gender === 'female');
+    } else if (ev.target.value === 'all') {
+      list = srcArr.filter(e => e.gender);
+    }
+    renderHTML(list);
+  }
+
+  function makeActive(trg, elements) {
+    elements.forEach(elem => elem.classList.remove('active'));
+    trg.classList.add('active');
   }
 
   function sortByAgeDesc(a, b) {
@@ -63,6 +84,8 @@ function controller(srcArr) {
     renderHTML(list);
   }
 
+  filtersContainer.addEventListener('click', filterByGender);
+
   searchField.addEventListener('input', searchByName);
 
   select.addEventListener('change', e => {
@@ -71,10 +94,8 @@ function controller(srcArr) {
     } else if (e.target.value === 'DESC') {
       sortByAgeDesc();
     } else if (e.target.value === 'ZA') {
-      console.log('Works ZA');
       sortByNameZa();
     } else if (e.target.value === 'AZ') {
-      console.log('Works AZ');
       sortByNameAz();
     }
   });
