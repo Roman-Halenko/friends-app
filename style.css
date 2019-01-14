@@ -39,6 +39,7 @@ form {
 }
 
 #search {
+  max-width: 80%;
   font-weight: 300;
   color: #314c48fa;;
   line-height: 30px;
