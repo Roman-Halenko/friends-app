@@ -91,9 +91,11 @@ function renderHTML(arrOfObj) {
     <div class="usr_card">
       <img class="user_img" src="${e.picture.large}">
       <p class="usr_name">${e.name.first} ${e.name.last}</p>
-      <span class="">${e.dob.age} yers</span>
-      <span class="location">${e.location.state}: ${e.location.city}</span>
-      </div>
+      <span class="label">Age: ${e.dob.age}</span>
+      <span class="location">
+        <i class="fa fa-home"></i> ${e.location.state}: ${e.location.city}
+      </span>
+    </div>
     `);
   })
 };
