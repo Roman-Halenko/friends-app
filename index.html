@@ -9,21 +9,33 @@
   <body>
     <header>
       <div id="filter_area">
-        <form class="" action="index.html" method="post">
-          <input type="text" id="search" placeholder="Search..."><br>
-          <label>Gender:
-            <input type="button" name="Ratata" value="male">
-            <input type="button" name="Ratata" value="female">
-            <input type="button" name="Ratata" value="all">
+        <form>
+          <input type="search" id="search" placeholder="Search..."><br>
+          <div class="wrapper">
+            <label class="sort-label" for="input-sort">Sort by:</label>
+            <select id="input-sort">
+              <option value="default">Default</option>
+              <option value="ASC">Age: ASC</option>
+              <option value="DESC">Age: DESC</option>
+              <option value="AZ">Name: A – Z</option>
+              <option value="ZA">Name: Z – A</option>
+            </select>
+          </div>
+
+
+          <!-- <label id="gender">Gender:
+            <input type="button" value="male">
+            <input type="button" value="female">
+            <input type="button" value="all">
           </label><br>
-          <label>Name:
-            <input type="button" name="Ratata" value="a-z">
-            <input type="button" name="Ratata" value="z-a">
+          <label id="name">Name:
+            <input type="button" value="a-z">
+            <input type="button" value="z-a">
           </label><br>
           <label>Age:
-            <input type="button" name="Ratata" value="a-z">
-            <input type="button" name="Ratata" value="z-a">
-          </label>
+            <input type="button" value="a-z">
+            <input type="button" value="z-a">
+          </label> -->
         </form>
       </div>
       <button id="sort_btn">Sort</button>
